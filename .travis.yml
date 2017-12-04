@@ -1,0 +1,33 @@
+sudo: required
+dist: trusty
+os: linux
+language: node_js
+node_js:
+- '8'
+python:
+- '3.4'
+cache:
+  directories:
+  - node_modules
+before_install:
+- echo $authfile | gpg --passphrase-fd 0 src/auth.json.gpg
+- echo $datafile | gpg --passphrase-fd 0 src/data.json.gpg
+- sudo apt-get update -y
+- sudo apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential
+  g++ python3.4
+- npm install -g node-pre-gyp node-gyp
+- echo "alias python=python3" >> .bashrc
+- source .bashrc
+before_script:
+- npm install sqlite --save
+install:
+- npm install
+script:
+- npm run lint
+- npm test
+notifications:
+  email: false
+env:
+  global:
+  - secure: MXban+WgAvZ5eG3CDo+8yLnopnVCpQR5iTGtvmYVWCshbvEH1PXoXn/M8cq78ghhl3+HcqW7fAvrCFLj3i6wJhPMMFWyP5LgYQ5Cl2IP5RbMGvPm6bI8ZgaZR/69lfSsbKQgIRwd+iZSdLzcbVnN+TSp25RUIYbxqS0YBDS41IA6inOgUAR9W0rJuzidkODLHCwJYCcuoFdQfNJ9CyyUWk1fA18u2HBNPQE49efKIb4LPH8Ap3T5DQRqiIRkKko4gJVWXE8P3JD2GBkFMIk6yg1E2DSqQnx4HxisynYCFONSmNFPOpicsTl6cV1qk60BEoj5VRnwvlP1k9Gp9blGH+c82rgN8IUmTzcfFkjgYzjuXu6Ea/ugqyygSHho4t4Mu467qdsfcg5WuLkJ+/aSF5sm4OvuCA/j2mPmkSEOF6X9JSXknf+tW+Ln7eNnUFiUiR64W8avYUPmIHfz/uuYYGnfDFreGBWYcKg+apXQ0+NBJKxZ8R0P2oVo9pghg/yqp+17HMzLP1zPxuOGlJa3I7yKhxhBr1CIz/Ww4jpODOQ2vxAr08O+csiO84a7v6XQZR1OetDPqV5RTNbJoYHR/b4hRfXA7Pk47PVFtjikaOfKdWspn5hNyQR3JF0NJ5vs9CjYIwa3saXCXX/Mg3nTJNrOvs738kLLUd9EkIyF7+s=
+  - secure: BdSK4wC5M2askJgcYjZYyNzuvq/kcfvlUFum4325bWJj8iTMa8IkBpJIDdoA/5JX6FoUjtiH5XmHcBqGVnYLo3jdxQc1RuoYZrogjQEh8kEdIbChQJN7LVFVFmrjCwYesfSDizPeFdAIM55hE0UhgX0aGf6oVj3NmhULy53yC4MUGr8iBwv3t/z1w6HHT7UjKDoKhRi+Qe9N/izkPh52z/gjagvoiiK3J0LGITdFGOmT726UmMIhmp75elTwbdCTmvWazvrZkG9TKesMUU5F5tRFUN2+15aBoUnFyC9lkdkboGnG5fgpuIVxRjrJYdu4QYU/4k6v5I5dO6jbiTVuwJOb/8ksc/OKS7xw9BVcLDZTVBk6X8EcGwR1c8nh8tUEWGShz3HlOWPtEYMSFeIJg2h8Qmhc55J+Pc9VjVhitPFCGqQ7I6BcjtilRRHCh0TTqH4X3vkbJVAFSKwhC1viJKToHwXDVfqUuE+pbTuxZJYoqpon5BYHTXuPCGlc1p06D9p1cqpNYVcyrjisLjl3Pf/0cuM8jo4k9v8GgdhndMT397sy3RHj9ahVIf4W0zSzXfPTSfwQhahIVKbJ7AiegjF8MMfkYv76BH0r4bngmRQcOSi6yfL6KzWVZ7DUWAgh2vqKpaTudnk/abIiW6TzxqSEc29ySLUwdkrd9aSLMj8=
