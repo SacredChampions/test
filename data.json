@@ -19,6 +19,6 @@
     },
     "webhookNotifiers": true,
     "webhookData": {
-        "keywords": ["solitude","quanta", "Solitude", "Quanta", "noble", "Noble"]
+        "keywords": ["solitude","quanta", "Solitude", "Quanta", "noble", "Noble", "<@280271578850263040>"]
     }
 }
