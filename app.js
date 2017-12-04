@@ -19,9 +19,9 @@
 
 const Path = require('path'),
 	DiscordSelfBot = require(Path.join(__dirname, 'DiscordSelfBot.js')),
-	keys = require('./auth.json'),
+	token = process.env.TOKEN,
 	start = function () {
-		token = process.env.TOKEN
+		
 		new DiscordSelfBot(token).init();
 	};
 
