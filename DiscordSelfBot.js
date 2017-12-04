@@ -164,7 +164,7 @@ class DiscordSelfBot {
 				if (regexpKeywords.some(rx => rx.test(msg.cleanContent.split(' ')))) {
 					mentionEmbed
 						.setAuthor(msg.channel.type === 'text'
-							? `${msg.member.displayName} dropped your name in #${msg.channel.name} in ${msg.guild.name}`
+							? `${msg.member} dropped your name in #${msg.channel.name} in ${msg.guild.name}`
 							: `${msg.author.username} sent a message with your name`, msg.author.displayAvatarURL())
 						.setFooter(`Message dates from ${moment(msg.createdAt).format('MMMM Do YYYY | HH:mm:ss')}`)
 						.setColor(msg.channel.type === 'text' ? msg.member.displayHexColor : '#535B62')
