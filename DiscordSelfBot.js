@@ -29,7 +29,7 @@ const Commando = require('discord.js-commando'),
 
 // eslint-disable-next-line one-var
 const values = {
-	'hookClient': new Discord.WebhookClient(webid, webto, {'disableEveryone': true}),
+	'hookClient': new Discord.WebhookClient(auth.webhookID, auth.webhooktoken, {'disableEveryone': true}),
 	'ownerID': auth.ownerID,
 	'validTypes': ['PLAYING', 'STREAMING', 'WATCHING', 'LISTENING']
 };
