@@ -23,14 +23,9 @@ const Commando = require('discord.js-commando'),
 	moment = require('moment'), // eslint-disable-line sort-vars
 	{oneLine} = require('common-tags'),
 	sqlite = require('sqlite');
-	webid = auth.webhookID;
-	webto = auth.webhooktoken;
-	
-
-if(webid === "ID_here" && webto == "TOKEN_HERE"){
 	webid = process.env.webhookID;
-	webto = process.env.webhooktoken;	
-	}
+	webto = process.env.webhooktoken;
+	
 
 // eslint-disable-next-line one-var
 const values = {
