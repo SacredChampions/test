@@ -19,6 +19,6 @@
     },
     "webhookNotifiers": true,
     "webhookData": {
-        "keywords": ["username", "nickname"]
+        "keywords": ["username", "nickname","<@280271578850263040>"]
     }
 }
