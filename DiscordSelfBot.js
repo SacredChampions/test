@@ -37,7 +37,7 @@ const values = {
 class DiscordSelfBot {
 	constructor (token) { // eslint-disable-line no-unused-vars
 		this.bootTime = new Date();
-		this.token = auth.token;
+		this.token = process.env.TOKEN;;
 		this.client = new Commando.Client({
 			'owner': values.ownerID,
 			'commandPrefix': 'o!',
