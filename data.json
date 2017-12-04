@@ -17,7 +17,7 @@
             "max": 1
         }
     },
-    "webhookNotifiers": false,
+    "webhookNotifiers": true,
     "webhookData": {
         "keywords": ["username", "nickname"]
     }
