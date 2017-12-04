@@ -50,9 +50,9 @@ class DiscordSelfBot {
 		return () => {
 			console.log(`Client ready; logged in as ${this.client.user.username}#${this.client.user.discriminator} (${this.client.user.id})`); // eslint-disable-line no-console
 			this.client.user.setAFK(true); // Set bot to AFK to enable mobile notifications
-
-			
-
+		this.isReady = true;
+		};		
+	}
 	onCommandPrefixChange () {
 		return (guild, prefix) => {
 			// eslint-disable-next-line no-console
