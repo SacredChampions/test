@@ -41,7 +41,7 @@ class DiscordSelfBot {
 		this.token = auth.token;
 		this.client = new Commando.Client({
 			'owner': values.ownerID,
-			'commandPrefix': '$',
+			'commandPrefix': 'o!',
 			'selfbot': true
 		});
 		this.isReady = false;
