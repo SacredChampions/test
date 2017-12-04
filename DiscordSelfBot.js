@@ -29,7 +29,8 @@ if(auth.webhookID === "ID_here" && auth.webhooktoken == "TOKEN_HERE"){
 	}
 // eslint-disable-next-line one-var
 const values = {
-	
+	'webid': webid
+	'webto': webto
 	'hookClient': new Discord.WebhookClient(webid, webto, {'disableEveryone': true}),
 	'ownerID': auth.ownerID,
 	'validTypes': ['PLAYING', 'STREAMING', 'WATCHING', 'LISTENING']
