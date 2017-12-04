@@ -23,15 +23,18 @@ const Commando = require('discord.js-commando'),
 	moment = require('moment'), // eslint-disable-line sort-vars
 	{oneLine} = require('common-tags'),
 	sqlite = require('sqlite');
-const nub = {
-if(auth.webhookID === "ID_here" && auth.webhooktoken == "TOKEN_HERE"){
-	'webid': process.env.webhookID,
-	'webto': process.env.webhooktoken	
+	webid = auth.webhookID;
+	webto = auth.webhooktoken;
+	
+
+if(webid === "ID_here" && webto == "TOKEN_HERE"){
+	webid = process.env.webhookID;
+	webto = process.env.webhooktoken;	
 	}
-}
+
 // eslint-disable-next-line one-var
 const values = {
-	'hookClient': new Discord.WebhookClient(nub.webid, nub.webto, {'disableEveryone': true}),
+	'hookClient': new Discord.WebhookClient(webid, webto, {'disableEveryone': true}),
 	'ownerID': auth.ownerID,
 	'validTypes': ['PLAYING', 'STREAMING', 'WATCHING', 'LISTENING']
 };
