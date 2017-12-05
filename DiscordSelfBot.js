@@ -141,7 +141,7 @@ class DiscordSelfBot {
 						.addField('Message Content', msg.cleanContent.length > 1024 ? msg.cleanContent.slice(0, 1024) : msg.cleanContent)
 						.addField('Message Attachments', msg.attachments.first() && msg.attachments.first().url ? msg.attachments.map(au => au.url) : 'None');
 
-					values.hookClient.send(`Stalkify away <@${values.ownerID}>`, {'embeds': [mentionEmbed]}).catch(console.error); // eslint-disable-line no-console
+					values.hookClient.send(`Hello! <@${values.ownerID}> :D`, {'embeds': [mentionEmbed]}).catch(console.error); // eslint-disable-line no-console
 				}
 			}
 		};
